@@ -6,11 +6,13 @@
     
 }
 .garbage{
-    height:3rem;
-    background: balck;
+    height:5rem;
+    background: transparent;
+    color: whitesmoke;
     margin-top: 1rem;
     margin-left: 2rem;
     padding-right: 25rem;
+
 }
 .hero_image{
     color: black;
@@ -29,4 +31,15 @@ img.home{
     margin-top: 3rem;
     height: 35vw;
     border-radius: 3rem;
+}
+/* h1{
+    font-size: 3rem;
+} */
+span{
+  color:rgb(138, 208, 210);
+}
+.content{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: -22rem;
 }
