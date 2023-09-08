@@ -66,6 +66,7 @@ a {
 .container-1 {
   margin: auto;
   margin-top: 50px;
+  margin-left: 4rem;
   color: #5b8856;
   font-size: 3vw;
   /* align-items: center; */
@@ -83,6 +84,7 @@ a {
 .container-2 img {
   height: 60vh;
   width: 100%;
+  margin-top: -27rem;
 }
 .container-3 {
   display: none;
