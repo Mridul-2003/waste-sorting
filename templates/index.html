@@ -7,13 +7,31 @@
     <title>Waste game</title>
   </head>
   <body>
-    <section class="nav">
-      <div class="hero_image">
-        <img class="garbage" src="../static/image/picking.jpg" />
-        <h5>Play</h5>
-        <h5>About</h5>
-        <h5>Learn</h5>
-      </div>
+    <header class="header">
+      <nav class="navbar">
+        <a href="#" class="nav-logo"
+          ><img src="/static/image/recycle.png" alt=""
+        /></a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Play</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Learn</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">About us</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- <section class="page">
       <div class="page-content">
         <img class="home" src="../static/image/jump_girl.jpeg" />
       </div>
@@ -22,6 +40,30 @@
         <span class="color"> go above and above for your health</span> as a
         <br />unified team who is committed to your satisfaction
       </div>
+    </section> -->
+
+    <section id="features" class="container">
+      <div class="container-1">
+        <h2>Sort the WASTE</h2>
+        <p>
+          We determined that your child learn to classify between BAD and GOOD
+        </p>
+        <p class="play">Let's Start the game</p>
+        <div class="button">
+          <a href="#" class="btn btn__hero use">Play </a>
+        </div>
+      </div>
+      <div class="container-2">
+        <img src="/static/image/jump_girl.jpeg" alt="" />
+      </div>
+      <div class="container-3">
+        <a href="#" class="btn btn__hero use">Upload </a>
+        <a href="{{url_for('video_feed')}}" class="btn btn__hero use"
+          >Go live</a
+        >
+      </div>
     </section>
+
+    <script src="/static/javascript/javascript.js"></script>
   </body>
 </html>
