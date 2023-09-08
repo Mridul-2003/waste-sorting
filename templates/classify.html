@@ -19,10 +19,39 @@
         padding-top: 100px;
         margin-left: 50px;
       }
-      .box-2 img {
+
+      .box-2 h1 {
+        color: #5b8856;
+        font-weight: 1500;
+        font-size: 30px;
+      }
+      .box-2 p {
+        font-size: 20px;
+        font-weight: 1000;
+      }
+      .box-3 img {
         width: 250px;
         padding-top: 100px;
         margin-right: 50px;
+      }
+      .submit {
+        border-radius: 10px;
+        width: 100px;
+        height: 35px;
+        background-color: #9af990;
+        margin: 20px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      .submit:hover {
+        background-color: white;
+        border: 2px solid;
+      }
+      .option {
+        border-radius: 10px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        width: 200px;
+        text-align: center;
+        height: 35px;
       }
     </style>
   </head>
@@ -35,7 +64,7 @@
 
     <div class="box">
       <div class="box-1">
-        <img src="/static/image/garbage - Copy.png" alt="" />
+        <img src="/static/image/bluebin.png" alt="" />
       </div>
       <div class="box-2">
         <h1>Waste Sorting Game</h1>
@@ -45,27 +74,25 @@
           alt="{{ item_to_classify }}"
           width="200"
         />
+        <form id="classification-form" method="POST" action="/classify">
+          <label for="user_choice">Your Choice:</label>
+          <select class="option" name="user_choice" id="user_choice">
+            <option value="Recyclable">Recyclable</option>
+            <option value="Non-Recyclable">Non-Recyclable</option>
+          </select>
+          <input
+            type="hidden"
+            name="item_to_classify"
+            value="{{ item_to_classify }}"
+          />
+          <input class="submit" type="submit" value="Submit" />
+        </form>
+        <p id="score-message">Score: <span id="score">0</span></p>
       </div>
       <div class="box-3">
         <img src="/static/image/dustbin.png" alt="" />
       </div>
     </div>
-
-    <form id="classification-form" method="POST" action="/classify">
-      <label for="user_choice">Your Choice:</label>
-      <select name="user_choice" id="user_choice">
-        <option value="Recyclable">Recyclable</option>
-        <option value="Non-Recyclable">Non-Recyclable</option>
-      </select>
-      <input
-        type="hidden"
-        name="item_to_classify"
-        value="{{ item_to_classify }}"
-      />
-      <input type="submit" value="Submit" />
-    </form>
-
-    <p id="score-message">Score: <span id="score">0</span></p>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
