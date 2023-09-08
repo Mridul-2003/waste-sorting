@@ -1,5 +1,5 @@
 *{
-    background: black;
+    background:whitesmoke;
 }
 .nav{
     background-color:#d9dbdd0d;
@@ -8,13 +8,16 @@
 .garbage{
     height:3rem;
     background: balck;
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-left: 2rem;
     padding-right: 25rem;
 }
 .hero_image{
-    color: white;
+    color: black;
     font-size: 1.5rem;
+    font-weight: 400;
+
+    font-family:cursive;
 }
 h5{
     justify-content: space-between;
@@ -22,7 +25,7 @@ h5{
     padding-left: 8rem;
 }
 img.home{
-    margin-left:46.2rem;
+    margin-left:55rem; 
     margin-top: 3rem;
     height: 35vw;
     border-radius: 3rem;
