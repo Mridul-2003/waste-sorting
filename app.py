@@ -2,13 +2,18 @@ from flask import Flask, render_template, request, jsonify
 import random
 import tensorflow as tf
 from tensorflow import keras
+from keras.models import load_model
 from PIL import Image
 import numpy as np
 
-app = Flask(__name__, static_folder="static")
+app = Flask(__name__,static_folder="static", static_url_path="/static")
 
 # Load your machine learning model (cnn.h5) here
-model = keras.models.load_model("cnn.h5")
+try:
+    model = load_model("cnn.h5")
+    print("Model loaded successfully.")
+except Exception as e:
+    print("Error loading model:", str(e))
 
 # Sample waste items with corresponding image filenames
 waste_items = [
@@ -48,7 +53,10 @@ def model_predict(image_path):
 
 # Route to start the game
 @app.route("/")
-def index():
+def main():
+    return render_template('index.html')
+@app.route('/play')
+def play():
     # Randomly select a waste item for the user to classify
     item_info = random.choice(waste_items)
     item_to_classify = item_info["item"]
