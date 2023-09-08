@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Waste Sorting Game</title>
+<<<<<<< HEAD
     <style>
       .logo img {
         height: 50px;
@@ -94,25 +95,45 @@
       </div>
     </div>
 
+=======
+</head>
+<body>
+    <h1>Waste Sorting Game</h1>
+    <p>Classify the item:</p>
+    <img src="{{ url_for('static', filename=item_image) }}" alt="{{ item_to_classify }}" width="200">
+
+    <form id="classification-form" method="POST" action="/classify">
+        <label for="user_choice">Your Choice:</label>
+        <select name="user_choice" id="user_choice">
+            <option value="Recyclable">Recyclable</option>
+            <option value="Organic">Organic</option>
+        </select>
+        <input type="hidden" name="item_to_classify" value="{{ item_to_classify }}">
+        <input type="submit" value="Submit">
+    </form>
+
+    <p id="score-message">Score: <span id="score">0</span></p>
+
+>>>>>>> 70fc2c55310b79c49b554e8f288627f912a38818
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-      $(document).ready(function () {
-        $("#classification-form").submit(function (event) {
-          event.preventDefault();
-          var formData = $(this).serialize();
-          $.ajax({
-            type: "POST",
-            url: "/classify",
-            data: formData,
-            dataType: "json",
-            success: function (response) {
-              var score = response.score;
-              $("#score").text(score);
-              // You can add more logic for displaying messages, advancing to the next item, etc.
-            },
-          });
+        $(document).ready(function () {
+            $("#classification-form").submit(function (event) {
+                event.preventDefault();
+                var formData = $(this).serialize();
+                $.ajax({
+                    type: "POST",
+                    url: "/classify",
+                    data: formData,
+                    dataType: "json",
+                    success: function (response) {
+                        var score = response.score;
+                        $("#score").text(score);
+                        // You can add more logic for displaying messages, advancing to the next item, etc.
+                    }
+                });
+            });
         });
-      });
     </script>
-  </body>
+</body>
 </html>
