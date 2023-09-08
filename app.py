@@ -7,7 +7,7 @@ import numpy as np
 
 app = Flask(__name__, static_folder="static")
 
-# Load your machine learning model (can.h5) here
+# Load your machine learning model (cnn.h5) here
 model = keras.models.load_model("cnn.h5")
 
 # Sample waste items with corresponding image filenames
@@ -29,15 +29,22 @@ def preprocess_image(image_path):
 def model_predict(image_path):
     preprocessed_image = preprocess_image(image_path)
     prediction = model.predict(preprocessed_image)
+    threshold = 0.5
+
+    if prediction[0][0] >= threshold:
+        return "Organic"
+    else:
+        return "Recyclable"
+
     
     # Assuming your model returns a probability for each class
     # You can set a threshold to decide the class (e.g., 0.5 for binary classification)
-    threshold = 0.5
+    # threshold = 0.89
     
-    if prediction[0][0] >= threshold:
-        return "Recyclable"
-    else:
-        return "Organic"
+    # if prediction[0][0] > threshold:
+    #     return "Recyclable"
+    # else:
+    #     return "Organic"
 
 # Route to start the game
 @app.route("/")
@@ -49,7 +56,6 @@ def index():
     true_label = item_info["label"]
     return render_template("classify.html", item_to_classify=item_to_classify, item_image=item_image, true_label=true_label)
 
-# Route to handle user input and calculate the score
 @app.route("/classify", methods=["POST"])
 def classify():
     user_choice = request.form["user_choice"]
@@ -59,13 +65,23 @@ def classify():
     image_path = f"static/{item_to_classify.lower().replace(' ', '_')}.jpeg"  # Adjust the image path accordingly
     model_prediction = model_predict(image_path)
     
+    # Initialize the score
+    score = 0
+    
     # Check if the user's choice matches the model prediction
     if user_choice == model_prediction:
         score = 1  # Correct classification
     else:
-        score = 0  # Incorrect classification
+        score=0
     
-    return jsonify({"score": score})
+    # Randomly select a new waste item for the next round
+    item_info = random.choice(waste_items)
+    item_to_classify = item_info["item"]
+    item_image = item_info["image"]
+    true_label = item_info["label"]
+    
+    return jsonify({"score": score, "next_item_to_classify": item_to_classify, "next_item_image": item_image, "true_label": true_label})
+
 
 if __name__ == "__main__":
     app.run(debug=True)
