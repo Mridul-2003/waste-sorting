@@ -1,27 +1,43 @@
 from flask import Flask, render_template, request, jsonify
 import random
+import tensorflow as tf
+from tensorflow import keras
+from PIL import Image
+import numpy as np
 
-app = Flask(__name__,static_folder="static")
+app = Flask(__name__, static_folder="static")
+
+# Load your machine learning model (can.h5) here
+model = keras.models.load_model("cnn.h5")
 
 # Sample waste items with corresponding image filenames
 waste_items = [
     {"item": "Plastic Bottle", "image": "plastic_bottle.jpeg", "label": "Recyclable"},
     {"item": "Paper", "image": "paper.jpeg", "label": "Recyclable"},
-    # {"item": "Aluminum Can", "image": "aluminum_can.jpg", "label": "Recyclable"},
-    # {"item": "Glass", "image": "glass.jpg", "label": "Recyclable"},
-    {"item": "Organic Waste", "image": "organic_waste.png", "label": "Non-Recyclable"}
+    {"item": "Organic Waste", "image": "organic_waste.png", "label": "Organic"}
 ]
 
-# Mock machine learning model function (replace with your actual model)
-def model_predict(item_to_classify):
-    # Replace this with your model's prediction logic
-    # For this example, we'll assume a simple rule-based model
-    recyclable_items = ["Plastic Bottle", "Paper", "Organic Waste"]
+# Function to preprocess an image for model prediction
+def preprocess_image(image_path):
+    image = Image.open(image_path)
+    image = image.resize((224, 224))  # Resize image to match your model's input size
+    image = np.array(image) / 255.0  # Normalize pixel values
+    image = image.reshape((1, 224, 224, 3))  # Reshape for model input (adjust dimensions as needed)
+    return image
+
+# Function to make predictions using the loaded model
+def model_predict(image_path):
+    preprocessed_image = preprocess_image(image_path)
+    prediction = model.predict(preprocessed_image)
     
-    if item_to_classify in recyclable_items:
+    # Assuming your model returns a probability for each class
+    # You can set a threshold to decide the class (e.g., 0.5 for binary classification)
+    threshold = 0.5
+    
+    if prediction[0][0] >= threshold:
         return "Recyclable"
     else:
-        return "Non-Recyclable"
+        return "Organic"
 
 # Route to start the game
 @app.route("/")
@@ -39,8 +55,9 @@ def classify():
     user_choice = request.form["user_choice"]
     item_to_classify = request.form["item_to_classify"]
     
-    # Get the model prediction for the item
-    model_prediction = model_predict(item_to_classify)
+    # Use the model to predict the item's label based on the image
+    image_path = f"static/{item_to_classify.lower().replace(' ', '_')}.jpeg"  # Adjust the image path accordingly
+    model_prediction = model_predict(image_path)
     
     # Check if the user's choice matches the model prediction
     if user_choice == model_prediction:
