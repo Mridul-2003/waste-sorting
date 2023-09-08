@@ -3,18 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}"/>
+
     <title>Waste game</title>
   </head>
   <body>
     <header class="header">
       <nav class="navbar">
         <a href="#" class="nav-logo"
-          ><img src="/static/image/recycle.png" alt=""
+          ><img src="{{url_for('static',filename='image/recycle.png')}}" alt=""
         /></a>
         <ul class="nav-menu">
           <li class="nav-item">
-            <a href="/templates/classify.html" class="nav-link">Play</a>
+            <a href="{{url_for('play')}}" class="nav-link">Play</a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">Learn</a>
@@ -51,20 +52,20 @@
         </p>
         <p class="play">Let's Start the game</p>
         <div class="button">
-          <a href="/templates/classify.html" class="btn btn__hero use">Play </a>
+          <a href="{{url_for('play')}}" class="btn btn__hero use">Play </a>
         </div>
       </div>
       <div class="container-2">
-        <img id="image" src="/static/image/black.png" alt="" />
+        <img id="image" src="{{url_for('static',filename='image/black.png')}}" alt="" />
       </div>
       <div class="container-3">
         <a href="#" class="btn btn__hero use">Upload </a>
-        <a href="{{url_for('video_feed')}}" class="btn btn__hero use"
+        <a href="" class="btn btn__hero use"
           >Go live</a
         >
       </div>
     </section>
 
-    <script src="/static/javascript/javascript.js"></script>
+    <script src="{{url_for('static',filename='javascript/javascript.js')}}"></script>
   </body>
 </html>
