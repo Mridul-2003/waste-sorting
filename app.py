@@ -69,6 +69,9 @@ def main():
 @app.route('/home')
 def home():
     return render_template('index.html')
+@app.route('/contact')
+def contact():
+    return render_template('index.html')
 @app.route('/play')
 def play():
     # Randomly select a waste item for the user to classify
