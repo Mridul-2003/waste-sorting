@@ -103,7 +103,7 @@ a {
   margin-right: 50px;
 }
 .container-2 img {
-  width: 70%;
+  width: 50%;
   margin-top: -27rem;
   margin-left:40rem;
 
@@ -191,11 +191,6 @@ a {
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
   }
-  .container-2 img {
-    margin-top: -4rem;
-    justify-content: center;
-    align-items: center;
-  }
 
   .container-1 {
     z-index: +1;
@@ -230,6 +225,14 @@ a {
 }
 @media only screen and (max-width: 1150px) {
   .container-2 img {
-    margin-right: -10rem;
+    margin-left: 23rem;
+    margin-top: -20rem;
+  }
+}
+@media only screen and (max-width: 768px){
+  .container-2 img{
+    margin-top: 18rem;
+    margin-left: -10rem;
+    width:50vw;
   }
 }
