@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}" />
+
+    <title>{% block title %}Waste game{% endblock %}</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <a href="#" class="nav-logo"
+          ><img src="{{url_for('static',filename='image/recycle.png')}}" alt=""
+        /></a>
+        <ul class="nav-menu menu">
+          <li class="nav-item">
+            <a href="{{url_for('play')}}" class="nav-link">Play</a>
+          </li>
+          <li class="nav-item">
+            <a href="{{url_for('Learn')}}" class="nav-link">Learn</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">About us</a>
+          </li>
+        </ul>
+        <!-- <button id="toggleButton">toggle</button> -->
+        <!-- <button id="toggleButton"><i class="bx bx-toggle-right"></i></button> -->
+
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+    </body>
+    {% block content %}{% endblock %}
+</html>
