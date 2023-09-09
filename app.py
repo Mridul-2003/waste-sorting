@@ -66,6 +66,9 @@ def model_predict(image_path):
 @app.route("/")
 def main():
     return render_template('index.html')
+@app.route('/home')
+def home():
+    return render_template('index.html')
 @app.route('/play')
 def play():
     # Randomly select a waste item for the user to classify
@@ -91,10 +94,8 @@ def classify():
     
     # Check if the user's choice matches the model prediction
     if user_choice == model_prediction:
-        score+= 1  # Correct classification
+        score= 1  # Correct classification
     else:
-        score-=1
-    if score<0:
         score=0
     
     # Randomly select a new waste item for the next round
