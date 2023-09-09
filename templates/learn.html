@@ -1,0 +1,88 @@
+{% extends 'navbar.html' %}
+
+{% block title %}Play - Waste game{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='learn.css')}}">
+    <title>Learn</title>
+</head>
+<body>
+    <h1>Projects Videos Using Recycle Objects</h1>
+    <div class="videos">
+        <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/HkHEJEzMKwc?si=hNy8rypKf2F7zEHc" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; 
+        encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen></iframe>
+        <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/VdohdU2uOBQ?si=XRZbASnTt_BNNCYd"
+         title="YouTube video player" frameborder="0" 
+         allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+          gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+          <iframe width="560" height="315" 
+          src="https://www.youtube.com/embed/CtSr3yBasIM?si=Qguowl7v8cADThRv" 
+          title="YouTube video player" frameborder="0" allow="accelerometer;
+           autoplay; clipboard-write; encrypted-media; gyroscope; 
+           picture-in-picture; web-share" allowfullscreen></iframe>
+           <iframe width="560" height="315" 
+           src="https://www.youtube.com/embed/M3TOKTHYc3g?si=af0uBOriI1BcjWUm" 
+           title="YouTube video player" frameborder="0" allow="accelerometer;
+            autoplay; clipboard-write; encrypted-media; gyroscope;
+             picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div class="container">
+        <h1>Learn About Recyclable Objects</h1>
+        <p>Click on the objects to learn more!</p>
+        <div class="object-container">
+            <!-- Recyclable Objects -->
+            <div class="object-card" onclick="showInfo('Plastic Bottle')">
+                <p class="object-name">Plastic Bottle</p>
+            </div>
+            <div class="object-card" onclick="showInfo('Cardboard Box')">
+                <p class="object-name">Cardboard Box</p>
+            </div>
+            <div class="object-card" onclick="showInfo('Aluminum Can')">
+                <p class="object-name">Aluminum Can</p>
+            </div>
+            <!-- Add more objects here -->
+        </div>
+        <div id="object-info" style="display: none;">
+            <h2>Object Information</h2>
+            <p id="object-description"></p>
+        </div>
+    </div>
+    
+    <script>
+        function showInfo(objectName) {
+            const objectInfoDiv = document.getElementById('object-info');
+            const objectDescription = document.getElementById('object-description');
+
+            // Define descriptions for each object (you can customize these)
+            const descriptions = {
+                'Plastic Bottle': 'Plastic bottles are commonly used for packaging beverages and cleaning products. They are recyclable and can be turned into various plastic products.',
+                'Cardboard Box': 'Cardboard boxes are used for packaging and shipping various items. They can be recycled to make new cardboard products.',
+                'Aluminum Can': 'Aluminum cans are used for packaging beverages like soda and beer. They are highly recyclable and can be melted down to create new cans or other aluminum products.'
+            };
+
+            // Check if the objectName exists in descriptions
+            if (descriptions.hasOwnProperty(objectName)) {
+                // Update the object description
+                objectDescription.textContent = descriptions[objectName];
+                // Display the object info div
+                objectInfoDiv.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
+
+</body>
+</html>
+{% endblock %}
