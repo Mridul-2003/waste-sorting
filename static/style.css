@@ -103,15 +103,10 @@ a {
   margin-right: 50px;
 }
 .container-2 img {
-  height: 60vh;
-<<<<<<< HEAD
-  width: 100%;
-  /* margin-top: -27rem; */
-=======
   width: 70%;
   margin-top: -27rem;
   margin-left:40rem;
->>>>>>> 0a3b784a152af7474980d82f0f9db83ff35e9778
+
 }
 .container-3 {
   display: none;
