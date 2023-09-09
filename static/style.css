@@ -1,9 +1,30 @@
-body{
+body {
   background: whitesmoke;
 }
 
 li {
   list-style: none;
+}
+.whitesmoke {
+  background-color: whitesmoke;
+  color: black;
+}
+body.black {
+  color: white;
+}
+.black {
+  background-color: black;
+  color:#fff !important;
+}
+.black .text{
+  color: white;
+}
+.black .play{
+  color: white;
+}
+.black .navbar{
+  color:white;
+  z-index: +1 !important;
 }
 
 a {
@@ -170,12 +191,12 @@ a {
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
   }
   .container-2 img {
-    margin-top:-4rem;
+    margin-top: -4rem;
     justify-content: center;
     align-items: center;
   }
 
-  .container-1{
+  .container-1 {
     z-index: +1;
   }
   .nav-menu.active {
@@ -206,8 +227,8 @@ a {
     transform: translateY(-8px) rotate(-45deg);
   }
 }
-@media only screen and (max-width: 1150px){
-  .container-2 img{
-    margin-right:  -10rem;
+@media only screen and (max-width: 1150px) {
+  .container-2 img {
+    margin-right: -10rem;
   }
 }

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}"/>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}" />
 
     <title>Waste game</title>
   </head>
@@ -13,7 +13,7 @@
         <a href="#" class="nav-logo"
           ><img src="{{url_for('static',filename='image/recycle.png')}}" alt=""
         /></a>
-        <ul class="nav-menu">
+        <ul class="nav-menu menu">
           <li class="nav-item">
             <a href="{{url_for('play')}}" class="nav-link">Play</a>
           </li>
@@ -23,8 +23,9 @@
           <li class="nav-item">
             <a href="#" class="nav-link">About us</a>
           </li>
-          <button id="toggleButton">toggle</button>
         </ul>
+        <button id="toggleButton">toggle</button>
+
         <div class="hamburger">
           <span class="bar"></span>
           <span class="bar"></span>
@@ -47,7 +48,7 @@
     <section id="features" class="container">
       <div class="container-1">
         <h2>Sort the WASTE</h2>
-        <p>
+        <p class="text">
           We determined that your child learn to classify between BAD and GOOD
         </p>
         <p class="play">Let's Start the game</p>
@@ -56,13 +57,15 @@
         </div>
       </div>
       <div class="container-2">
-        <img id="image" src="{{url_for('static',filename='image/black.png')}}" alt="" />
+        <img
+          id="image"
+          src="{{url_for('static',filename='image/black.png')}}"
+          alt=""
+        />
       </div>
       <div class="container-3">
         <a href="#" class="btn btn__hero use">Upload </a>
-        <a href="" class="btn btn__hero use"
-          >Go live</a
-        >
+        <a href="" class="btn btn__hero use">Go live</a>
       </div>
     </section>
 
