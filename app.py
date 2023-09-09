@@ -22,7 +22,15 @@ waste_items = [
     {"item": "Organic Waste", "image": "organic_waste.png", "label": "Organic"},
     {"item": "Organic Waste 1", "image": "images.jpeg", "label": "Organic"},
     {"item": "Plastic Gamla", "image": "plastic_gamla.jpeg", "label": "Recyclable"},
-     {"item": "Soil", "image": "Soil.jpeg", "label": "Organic"}
+     {"item": "Soil", "image": "Soil.jpeg", "label": "Organic"},
+     {"item": "R_1", "image": "R_1.jpg", "label": "Recyclable"},
+     {"item": "R_10", "image": "R_10.jpg", "label": "Recyclable"},
+     {"item": "R_100", "image": "R_100.jpg", "label": "Recyclable"},
+     {"item": "R_1014", "image": "R_1014.jpg", "label": "Recyclable"},
+     {"item": "O_1", "image": "O_1.jpg", "label": "Organic"},
+     {"item": "O_100", "image": "O_100.jpg", "label": "Organic"},
+     {"item": "O_10007", "image": "O_10007.jpg", "label": "Organic"},
+     {"item": "O_10015", "image": "O_10015.jpg", "label": "Organic"},
 ]
 
 # Function to preprocess an image for model prediction
@@ -83,8 +91,10 @@ def classify():
     
     # Check if the user's choice matches the model prediction
     if user_choice == model_prediction:
-        score = 1  # Correct classification
+        score+= 1  # Correct classification
     else:
+        score-=1
+    if score<0:
         score=0
     
     # Randomly select a new waste item for the next round
