@@ -14,16 +14,16 @@ body.black {
 }
 .black {
   background-color: black;
-  color:#fff !important;
+  color: #fff !important;
 }
-.black .text{
+.black .text {
   color: white;
 }
-.black .play{
+.black .play {
   color: white;
 }
-.black .navbar{
-  color:white;
+.black .navbar {
+  color: white;
   z-index: +1 !important;
 }
 
@@ -105,7 +105,7 @@ a {
 .container-2 img {
   height: 60vh;
   width: 100%;
-  margin-top: -27rem;
+  /* margin-top: -27rem; */
 }
 .container-3 {
   display: none;
