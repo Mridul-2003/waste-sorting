@@ -21,9 +21,8 @@ waste_items = [
     {"item": "Paper", "image": "paper.jpeg", "label": "Recyclable"},
     {"item": "Organic Waste", "image": "organic_waste.png", "label": "Organic"},
     {"item": "Organic Waste 1", "image": "images.jpeg", "label": "Organic"},
-    {"item": "Plastic Toy", "image": "plastic toy.jpeg", "label": "Recyclable"},
     {"item": "Plastic Gamla", "image": "plastic_gamla.jpeg", "label": "Recyclable"},
-     {"item": "Soil", "image": "Soil.jpeg", "label": "Non-Recyclable"}
+     {"item": "Soil", "image": "Soil.jpeg", "label": "Organic"}
 ]
 
 # Function to preprocess an image for model prediction
@@ -44,8 +43,6 @@ def model_predict(image_path):
         return "Organic"
     elif prediction[0][0]<=threshold:
         return "Recyclable"
-    else:
-        return "Non-Recyclable"
 
     
     # Assuming your model returns a probability for each class
