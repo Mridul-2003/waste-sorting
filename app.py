@@ -66,7 +66,9 @@ def play():
     item_image = item_info["image"]
     true_label = item_info["label"]
     return render_template("classify.html", item_to_classify=item_to_classify, item_image=item_image, true_label=true_label)
-
+@app.route('/Learn')
+def Learn():
+    return render_template('learn.html')
 @app.route("/classify", methods=["POST"])
 def classify():
     user_choice = request.form["user_choice"]
