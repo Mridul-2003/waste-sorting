@@ -91,10 +91,8 @@ def classify():
     
     # Check if the user's choice matches the model prediction
     if user_choice == model_prediction:
-        score+= 1  # Correct classification
+        score= 1  # Correct classification
     else:
-        score-=1
-    if score<0:
         score=0
     
     # Randomly select a new waste item for the next round
