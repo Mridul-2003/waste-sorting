@@ -5,7 +5,7 @@ body {
 li {
   list-style: none;
 }
-.whitesmoke {
+/* .whitesmoke {
   background-color: whitesmoke;
   color: black;
 }
@@ -25,7 +25,7 @@ body.black {
 .black .navbar {
   color: white;
   z-index: +1 !important;
-}
+} */
 
 a {
   text-decoration: none;
@@ -104,8 +104,14 @@ a {
 }
 .container-2 img {
   height: 60vh;
+<<<<<<< HEAD
   width: 100%;
   /* margin-top: -27rem; */
+=======
+  width: 70%;
+  margin-top: -27rem;
+  margin-left:40rem;
+>>>>>>> 0a3b784a152af7474980d82f0f9db83ff35e9778
 }
 .container-3 {
   display: none;
