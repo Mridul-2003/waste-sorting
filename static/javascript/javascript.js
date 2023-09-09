@@ -19,20 +19,17 @@ function closeMenu() {
 
 const toggleButton = document.getElementById("toggleButton");
 const body = document.body;
-const image = document.getElementById("image");
 let isWhitesmoke = true;
 
 toggleButton.addEventListener("click", function () {
-  if (body.classList.contains("whitesmoke-bg")) {
-    body.classList.remove("whitesmoke-bg");
-    body.classList.add("black-bg");
-    console.log("white");
-    image.src = "../static/image/black.png"; // Change to the black-themed image
+  if (body.classList.contains("whitesmoke")) {
+    body.classList.remove("whitesmoke");
+    body.classList.add("black");
+    // console.log("white");
   } else {
-    body.classList.remove("black-bg");
-    body.classList.add("whitesmoke-bg");
-    console.log("black");
-    image.src = "../static/image/jump_girl.jpeg"; // Change back to the default image
+    body.classList.remove("black");
+    body.classList.add("whitesmoke");
+    //console.log("black");
   }
   isWhitesmoke = !isWhitesmoke;
 });
