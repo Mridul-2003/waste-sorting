@@ -37,8 +37,8 @@
             autoplay; clipboard-write; encrypted-media; gyroscope;
              picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
-    <div class="container">
-        <h1>Learn About Recyclable Objects</h1>
+    <div class="learn">
+        <h1>Learn About Recyclable Objects and Organic Waste</h1>
         <p>Click on the objects to learn more!</p>
         <div class="object-container">
             <!-- Recyclable Objects -->
@@ -51,8 +51,12 @@
             <div class="object-card" onclick="showInfo('Aluminum Can')">
                 <p class="object-name">Aluminum Can</p>
             </div>
+            <div class="object-card" onclick="showInfo('Organic Waste')">
+                <p class="object-name">Organic Waste</p>
+            </div>
+            
             <!-- Add more objects here -->
-        </div>
+          </div>
         <div id="object-info" style="display: none;">
             <h2>Object Information</h2>
             <p id="object-description"></p>
@@ -68,7 +72,8 @@
             const descriptions = {
                 'Plastic Bottle': 'Plastic bottles are commonly used for packaging beverages and cleaning products. They are recyclable and can be turned into various plastic products.',
                 'Cardboard Box': 'Cardboard boxes are used for packaging and shipping various items. They can be recycled to make new cardboard products.',
-                'Aluminum Can': 'Aluminum cans are used for packaging beverages like soda and beer. They are highly recyclable and can be melted down to create new cans or other aluminum products.'
+                'Aluminum Can': 'Aluminum cans are used for packaging beverages like soda and beer. They are highly recyclable and can be melted down to create new cans or other aluminum products.',
+                'Organic Waste':'Organic waste is any material that is biodegradable and comes from either a plant or an animal. Biodegradable waste is organic material that can be broken into carbon dioxide, methane or simple organic molecules.'
             };
 
             // Check if the objectName exists in descriptions
@@ -79,7 +84,12 @@
                 objectInfoDiv.style.display = 'block';
             }
         }
+        
+
+
+
     </script>
+
 </body>
 </html>
 
