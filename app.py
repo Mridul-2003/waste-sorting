@@ -66,6 +66,9 @@ def model_predict(image_path):
 @app.route("/")
 def main():
     return render_template('index.html')
+@app.route('/home')
+def home():
+    return render_template('index.html')
 @app.route('/play')
 def play():
     # Randomly select a waste item for the user to classify
