@@ -34,6 +34,18 @@
         padding-top: 100px;
         margin-right: 50px;
       }
+      button {
+        border-radius: 10px;
+        width: 100px;
+        height: 35px;
+        background-color: #9af990;
+        margin: 20px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      button:hover {
+        background-color: white;
+        border: 2px solid;
+      }
       .submit {
         border-radius: 10px;
         width: 100px;
@@ -99,11 +111,12 @@
         <p id="score-message">Score: <span id="score">0</span></p>
 
         <p>Next item to classify:</p>
-        <img
+        <!-- <img
           src="{{ url_for('static', filename=next_item_image) }}"
           alt="{{ next_item_to_classify }}"
           width="200"
-        />
+        /> -->
+        <button class="replay">Replay</button>
       </div>
       <div class="box-3">
         <img src="/static/image/dustbin.png" alt="" />

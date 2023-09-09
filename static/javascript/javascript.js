@@ -17,19 +17,19 @@ function closeMenu() {
   navMenu.classList.remove("active");
 }
 
-const toggleButton = document.getElementById("toggleButton");
-const body = document.body;
-let isWhitesmoke = true;
+// const toggleButton = document.getElementById("toggleButton");
+// const body = document.body;
+// let isWhitesmoke = true;
 
-toggleButton.addEventListener("click", function () {
-  if (body.classList.contains("whitesmoke")) {
-    body.classList.remove("whitesmoke");
-    body.classList.add("black");
-    // console.log("white");
-  } else {
-    body.classList.remove("black");
-    body.classList.add("whitesmoke");
-    //console.log("black");
-  }
-  isWhitesmoke = !isWhitesmoke;
-});
+// toggleButton.addEventListener("click", function () {
+//   if (body.classList.contains("whitesmoke")) {
+//     body.classList.remove("whitesmoke");
+//     body.classList.add("black");
+//     // console.log("white");
+//   } else {
+//     body.classList.remove("black");
+//     body.classList.add("whitesmoke");
+//     //console.log("black");
+//   }
+//   isWhitesmoke = !isWhitesmoke;
+// });

@@ -5,7 +5,7 @@ body {
 li {
   list-style: none;
 }
-.whitesmoke {
+/* .whitesmoke {
   background-color: whitesmoke;
   color: black;
 }
@@ -25,7 +25,7 @@ body.black {
 .black .navbar{
   color:white;
   z-index: +1 !important;
-}
+} */
 
 a {
   text-decoration: none;
